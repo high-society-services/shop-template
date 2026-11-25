@@ -5,7 +5,9 @@ import { resolveTheme, paletteNames } from './themes.js';
 
 // Apply the chosen style preset (plus any overrides) before anything is drawn.
 {
-  const name = config.shop?.theme || 'black-gold';
+  // ?theme=name in the address bar previews any look without editing the config.
+  const preview = new URLSearchParams(location.search).get('theme');
+  const name = (preview && paletteNames.includes(preview) ? preview : config.shop?.theme) || 'black-gold';
   if (!paletteNames.includes(name)) console.warn('[shopConfig] Unknown theme "' + name + '", using black-gold. Choose one of: ' + paletteNames.join(', '));
   const { scheme, vars } = resolveTheme(name, config.shop?.themeOverrides || {});
   for (const [key, value] of Object.entries(vars)) document.documentElement.style.setProperty(key, value);
