@@ -34,16 +34,40 @@ The browser tab icon is `icon-180.png`. Replace the file with a 180 × 180 PNG u
 
 ## Step 4: Choose the look
 
+There are 14 ready-made looks. Each one changes the whole site: background, cards, text, accents, borders, gradients and corner rounding.
+
 1. Open `shopConfig.js` and find `theme:` near the top.
-2. Type one of these names between the quotes:
-   - `'black-gold'`: black background with gold accents, the original look.
-   - `'midnight-silver'`: deep navy with silver accents and square corners.
-   - `'charcoal-copper'`: warm charcoal with copper accents and rounder corners.
+2. Type one name from the list between the quotes, for example `theme: 'ocean-teal',`.
 3. Save the file. The whole site changes to that look.
 
-To make your own look, open `themes.js`, copy one of the blocks, give it a new name, and change the colour values. Each value is a normal colour such as `#c9a24a`. The `-rgb` lines are three numbers separated by commas, for example `226, 192, 106`.
+**Dark looks:** `black-gold`, `midnight-silver`, `charcoal-copper`, `emerald-gold`, `burgundy-rose`, `ocean-teal`, `royal-violet`, `slate-minimal`
 
-The fonts are the two bundled with the template: Fraunces for headings and Montserrat for body text. To use other fonts, add their files to the folder and update the `@font-face` lines at the top of `styles.css`.
+**Light looks:** `ivory-bronze`, `blush-rose`, `sage-olive`, `marble-monochrome`, `sand-terracotta`, `sky-navy`
+
+### Changing one colour of a look
+
+Find `themeOverrides:` in `shopConfig.js` and type the change, for example:
+
+```js
+themeOverrides: { accent: '#b8860b' },
+```
+
+Leave it as `{}` to use the look exactly as it is. You can change several colours at once, separated by commas. The colour fields are:
+
+- `bg`: page background
+- `panel` and `panelAlt`: card and box backgrounds
+- `text` and `muted`: main and secondary text
+- `accentLight`, `accent`, `accentMid`, `accentDeep`: the highlight colours used for headings and gradients
+- `line`: thin borders
+- `radius`: corner rounding in pixels (0 is square, 24 is very round)
+
+Colours are written as six-digit codes such as `#b8860b`. Pick colours with any colour picker that shows the code.
+
+### Making a new look
+
+Open `themes.js`, copy one of the entries under `palettes`, give it a new name, and change its colours. Set `scheme` to `'dark'` or `'light'`, so the scrollbars and form fields match.
+
+The fonts are the two bundled with the template: Fraunces for headings and Montserrat for body text.
 
 ## Step 5: Add products
 
