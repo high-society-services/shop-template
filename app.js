@@ -1,6 +1,14 @@
 /* High Society storefront — UI. All shop content comes from shopConfig.js. */
 import { shopConfig as config } from './shopConfig.js';
 import * as core from './core.js';
+import { themes } from './themes.js';
+
+// Apply the chosen style preset before anything is drawn.
+{
+  const preset = themes[config.shop?.theme] || themes['black-gold'];
+  if (!themes[config.shop?.theme]) console.warn('[shopConfig] Unknown theme "' + config.shop?.theme + '", using black-gold.');
+  for (const [name, value] of Object.entries(preset)) document.documentElement.style.setProperty(name, value);
+}
 
 const STORAGE_KEY = 'highsociety-cart-v1';
 const $ = (sel, root = document) => root.querySelector(sel);

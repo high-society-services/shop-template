@@ -34,7 +34,16 @@ The browser tab icon is `icon-180.png`. Replace the file with a 180 × 180 PNG u
 
 ## Step 4: Choose the look
 
-Colours and fonts are set in `styles.css`, in the block at the top headed `:root`. Change the values after each colour name, for example `--gold-1: #e2c06a;`. The fonts are set with `--serif` (headings) and `--sans` (body text).
+1. Open `shopConfig.js` and find `theme:` near the top.
+2. Type one of these names between the quotes:
+   - `'black-gold'`: black background with gold accents, the original look.
+   - `'midnight-silver'`: deep navy with silver accents and square corners.
+   - `'charcoal-copper'`: warm charcoal with copper accents and rounder corners.
+3. Save the file. The whole site changes to that look.
+
+To make your own look, open `themes.js`, copy one of the blocks, give it a new name, and change the colour values. Each value is a normal colour such as `#c9a24a`. The `-rgb` lines are three numbers separated by commas, for example `226, 192, 106`.
+
+The fonts are the two bundled with the template: Fraunces for headings and Montserrat for body text. To use other fonts, add their files to the folder and update the `@font-face` lines at the top of `styles.css`.
 
 ## Step 5: Add products
 

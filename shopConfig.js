@@ -25,6 +25,8 @@ export const shopConfig = {
   shop: {
     name: 'Your Shop Name', // TODO: replace
     tagline: 'Your tagline here', // TODO: replace
+    // Look of the whole site. Choose: 'black-gold', 'midnight-silver' or 'charcoal-copper'.
+    theme: 'black-gold',
 
     // Logo images (paths are relative to index.html).
     // Set either to '' to fall back to a styled text wordmark.
